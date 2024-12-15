@@ -12,9 +12,9 @@
   {
     "objectID": "pages/00-introduction.html",
     "href": "pages/00-introduction.html",
-    "title": "\n1  introduction\n",
+    "title": "1  introduction",
     "section": "",
-    "text": "1.1 appendix",
+    "text": "Marconato et al. (2024)\n\n\nSpatialData: S4 class, readers (and, not yet, writers)\nSpatialData.plot: element-wise and layered visualizations\nSpatialData.data: example datasets made available\nthrough Bioc’s OSN bucket (and r BiocStyle::Biocpkg(\"BiocFileCache\") support)\n\n\n\n\n\nMarconato, Luca, Giovanni Palla, Kevin A Yamauchi, Isaac Virshup, Elyas Heidari, Tim Treis, Wouter-Michiel Vierdag, et al. 2024. “SpatialData: An Open and Universal Data Framework for Spatial Omics.” Nature Methods.\n\n\n\n Back to top",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>introduction</span>"
     ]
