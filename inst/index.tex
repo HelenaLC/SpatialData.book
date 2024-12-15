@@ -243,18 +243,6 @@ Local preview
 
 \bookmarksetup{startatroot}
 
-\chapter*{Welcome}\label{welcome}
-\addcontentsline{toc}{chapter}{Welcome}
-
-\markboth{Welcome}{Welcome}
-
-This is the landing page of the \texttt{BiocBook} entitled
-\emph{\ldots{}}.
-
-This book introduces the reader to \emph{\ldots{}}.
-
-\bookmarksetup{startatroot}
-
 \chapter*{Docker image}\label{docker-image}
 \addcontentsline{toc}{chapter}{Docker image}
 
@@ -266,7 +254,7 @@ A \texttt{Docker} image built from this repository is available here:
 \href{https://ghcr.io/HelenaLC/spatialdata.book}{ghcr.io/HelenaLC/spatialdata.book}
 🐳
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Get started now 🎉}, breakable, coltitle=black, colback=white, colframe=quarto-callout-tip-color-frame, left=2mm, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, rightrule=.15mm, toptitle=1mm, arc=.35mm, bottomtitle=1mm, titlerule=0mm, bottomrule=.15mm, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, toprule=.15mm, bottomtitle=1mm, rightrule=.15mm, breakable, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, colback=white, coltitle=black, left=2mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Get started now 🎉}, toptitle=1mm, arc=.35mm, colbacktitle=quarto-callout-tip-color!10!white, leftrule=.75mm, opacitybacktitle=0.6]
 
 You can get access to all the packages used in this book in \textless{}
 1 minute, using this command in a terminal:
@@ -314,7 +302,7 @@ image as follows:
 The initiated RStudio Server instance will be available at
 \url{https://localhost:8787}.
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Session info}, breakable, coltitle=black, colback=white, colframe=quarto-callout-note-color-frame, left=2mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, rightrule=.15mm, toptitle=1mm, arc=.35mm, bottomtitle=1mm, titlerule=0mm, bottomrule=.15mm, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, toprule=.15mm, bottomtitle=1mm, rightrule=.15mm, breakable, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, colback=white, coltitle=black, left=2mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Session info}, toptitle=1mm, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6]
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -365,6 +353,71 @@ The initiated RStudio Server instance will be available at
   through Bioc's OSN bucket (and
   \texttt{r\ BiocStyle::Biocpkg("BiocFileCache")} support)
 \end{itemize}
+
+\bookmarksetup{startatroot}
+
+\chapter{Datasets}\label{datasets}
+
+Datasets from
+\href{https://spatialdata.scverse.org/en/latest/tutorials/notebooks/datasets/README.html}{spatialdata.scverse.org}
+have been deposited in Bioconductor's OSN bucket, and can be loaded into
+R using \texttt{SpatialData.data}, with support for caching using
+\texttt{BiocFileCache}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(SpatialData)}
+\FunctionTok{library}\NormalTok{(SpatialData.data)}
+\end{Highlighting}
+\end{Shaded}
+
+We can get a list of available datasets via:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{available\_spd\_zarr\_zips}\NormalTok{()}
+\DocumentationTok{\#\#  [1] "mcmicro\_io.zip"                         }
+\DocumentationTok{\#\#  [2] "merfish.zarr.zip"                       }
+\DocumentationTok{\#\#  [3] "mibitof.zip"                            }
+\DocumentationTok{\#\#  [4] "steinbock\_io.zip"                       }
+\DocumentationTok{\#\#  [5] "visium\_associated\_xenium\_io\_aligned.zip"}
+\DocumentationTok{\#\#  [6] "visium\_hd\_3.0.0\_io.zip"                 }
+\DocumentationTok{\#\#  [7] "xenium\_rep1\_io\_aligned.zip"             }
+\DocumentationTok{\#\#  [8] "xenium\_rep2\_io\_aligned.zip"}
+\end{Highlighting}
+\end{Shaded}
+
+Any of the above can be retrieved using \texttt{unzip\_spd\_demo()}, and
+read into a R using \texttt{readSpatialData()}; e.g.:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dir.create}\NormalTok{(td }\OtherTok{\textless{}{-}} \FunctionTok{tempfile}\NormalTok{())}
+\NormalTok{zs }\OtherTok{\textless{}{-}} \FunctionTok{unzip\_spd\_demo}\NormalTok{(}
+    \AttributeTok{zipname=}\StringTok{"mibitof"}\NormalTok{, }
+    \AttributeTok{source=}\StringTok{"biocOSN"}\NormalTok{,}
+    \AttributeTok{destination=}\NormalTok{td)}
+\NormalTok{(sd }\OtherTok{\textless{}{-}} \FunctionTok{readSpatialData}\NormalTok{(zs))}
+\DocumentationTok{\#\#  class: SpatialData}
+\DocumentationTok{\#\#  {-} images(3):}
+\DocumentationTok{\#\#    {-} point16\_image (3,1024,1024)}
+\DocumentationTok{\#\#    {-} point23\_image (3,1024,1024)}
+\DocumentationTok{\#\#    {-} point8\_image (3,1024,1024)}
+\DocumentationTok{\#\#  {-} labels(3):}
+\DocumentationTok{\#\#    {-} point16\_labels (1024,1024)}
+\DocumentationTok{\#\#    {-} point23\_labels (1024,1024)}
+\DocumentationTok{\#\#    {-} point8\_labels (1024,1024)}
+\DocumentationTok{\#\#  {-} points(0):}
+\DocumentationTok{\#\#  {-} shapes(0):}
+\DocumentationTok{\#\#  {-} tables(1):}
+\DocumentationTok{\#\#    {-} table (36,3309)}
+\DocumentationTok{\#\#  coordinate systems:}
+\DocumentationTok{\#\#  {-} point16(2): point16\_image point16\_labels}
+\DocumentationTok{\#\#  {-} point23(2): point23\_image point23\_labels}
+\DocumentationTok{\#\#  {-} point8(2): point8\_image point8\_labels}
+\end{Highlighting}
+\end{Shaded}
+
 
 
 
