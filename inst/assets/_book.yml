@@ -3,6 +3,7 @@ book:
   chapters:
     - index.qmd
     - pages/00-introduction.qmd
+    - pages/01-datasets.qmd
   cover-image: assets/cover.png
   favicon: assets/favicon.png
   sidebar: 

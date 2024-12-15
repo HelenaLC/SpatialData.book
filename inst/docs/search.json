@@ -1,0 +1,12 @@
+[
+  {
+    "objectID": "pages/01-datasets.html",
+    "href": "pages/01-datasets.html",
+    "title": "\n2  Datasets\n",
+    "section": "",
+    "text": "Datasets from spatialdata.scverse.org have been deposited in Bioconductor’s OSN bucket, and can be loaded into R using SpatialData.data, with support for caching using BiocFileCache.\n\nlibrary(SpatialData)\nlibrary(SpatialData.data)\n\nWe can get a list of available datasets via:\n\navailable_spd_zarr_zips()\n##  [1] \"mcmicro_io.zip\"                         \n##  [2] \"merfish.zarr.zip\"                       \n##  [3] \"mibitof.zip\"                            \n##  [4] \"steinbock_io.zip\"                       \n##  [5] \"visium_associated_xenium_io_aligned.zip\"\n##  [6] \"visium_hd_3.0.0_io.zip\"                 \n##  [7] \"xenium_rep1_io_aligned.zip\"             \n##  [8] \"xenium_rep2_io_aligned.zip\"\n\nAny of the above can be retrieved using unzip_spd_demo(), and read into a R using readSpatialData(); e.g.:\n\ndir.create(td &lt;- tempfile())\nzs &lt;- unzip_spd_demo(\n    zipname=\"mibitof\", \n    source=\"biocOSN\",\n    destination=td)\n(sd &lt;- readSpatialData(zs))\n##  class: SpatialData\n##  - images(3):\n##    - point16_image (3,1024,1024)\n##    - point23_image (3,1024,1024)\n##    - point8_image (3,1024,1024)\n##  - labels(3):\n##    - point16_labels (1024,1024)\n##    - point23_labels (1024,1024)\n##    - point8_labels (1024,1024)\n##  - points(0):\n##  - shapes(0):\n##  - tables(1):\n##    - table (36,3309)\n##  coordinate systems:\n##  - point16(2): point16_image point16_labels\n##  - point23(2): point23_image point23_labels\n##  - point8(2): point8_image point8_labels\n\n\n\n\n Back to top",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Datasets</span>"
+    ]
+  }
+]

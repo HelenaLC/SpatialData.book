@@ -1,0 +1,25 @@
+# Datasets
+
+Datasets from [spatialdata.scverse.org](https://spatialdata.scverse.org/en/latest/tutorials/notebooks/datasets/README.html) have been deposited in Bioconductor's OSN bucket, and can be loaded into R using `SpatialData.data`, with support for caching using `BiocFileCache`.
+
+```{r message=FALSE, warning=FALSE}
+library(SpatialData)
+library(SpatialData.data)
+```
+
+We can get a list of available datasets via:
+
+```{r message=FALSE}
+available_spd_zarr_zips()
+```
+
+Any of the above can be retrieved using `unzip_spd_demo()`, and read into a R using `readSpatialData()`; e.g.:
+
+```{r message=FALSE}
+dir.create(td <- tempfile())
+zs <- unzip_spd_demo(
+    zipname="mibitof", 
+    source="biocOSN",
+    destination=td)
+(sd <- readSpatialData(zs))
+```
