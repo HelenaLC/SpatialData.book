@@ -31,7 +31,8 @@ Suggests:
     BiocStyle, 
     glue,
     sessioninfo,
-    knitr 
+    knitr,
+    paws
 remotes:
     HelenaLC/SpatialData,
     HelenaLC/SpatialData.data,
