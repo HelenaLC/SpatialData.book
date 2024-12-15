@@ -18,7 +18,7 @@ Any of the above can be retrieved using `unzip_spd_demo()`, and read into a R us
 ```{r message=FALSE}
 dir.create(td <- tempfile())
 zs <- unzip_spd_demo(
-    zipname="mibitof", 
+    zipname="mibitof.zip", 
     source="biocOSN",
     destination=td)
 (sd <- readSpatialData(zs))
