@@ -23,12 +23,6 @@ intro <- tryCatch(
 
 `r intro`
 
-# Welcome {-}
-
-This is the landing page of the `BiocBook` entitled *...*.  
-
-This book introduces the reader to *...*.  
-
 # Docker image {-}
 
 A `Docker` image built from this repository is available here: 
