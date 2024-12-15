@@ -8,13 +8,3 @@
 - `SpatialData.plot`: element-wise and layered visualizations
 - `SpatialData.data`: example datasets made available  
 through Bioc's OSN bucket (and `r BiocStyle::Biocpkg("BiocFileCache")` support)
-
-## appendix
-
-::: {.callout-note icon=false, collapse=true}
-### session
-```{r}
-#| code-fold: false
-sessionInfo()
-```
-:::

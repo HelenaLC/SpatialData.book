@@ -78,18 +78,10 @@ micromamba activate BiocBook
 ``` 
 -->
 
+::: {.callout-note icon=false, collapse=true}
 # Session info {-}
-
-::: {.callout-note collapse="true"}
-
-## Click to expand 👇
-
-```{r "session info"}
-#| cache: false
-sessioninfo::session_info(
-    installed.packages()[,"Package"], 
-    include_base = TRUE
-)
+```{r}
+#| code-fold: false
+sessionInfo()
 ```
-
 :::
