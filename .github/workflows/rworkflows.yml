@@ -1,7 +1,7 @@
 ## Adapted from neurogenomics/rworkflows: rworkflows::use_workflow()
 
 name: rworkflows
-'on':
+on:
   push:
     branches:
     - main

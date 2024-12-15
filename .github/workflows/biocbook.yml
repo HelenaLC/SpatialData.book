@@ -3,8 +3,8 @@ name: biocbook
 on:
   push:
     branches:
-      - main
-      #- RELEASE_**
+      - devel
+      - RELEASE_**
 
 jobs:
   build-push:
