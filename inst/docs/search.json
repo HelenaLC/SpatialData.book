@@ -8,5 +8,15 @@
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Datasets</span>"
     ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "SpatialData.book",
+    "section": "",
+    "text": "##  Warning in packageDescription(\"SpatialData.book\"): no package\n##  'SpatialData.book' was found\n\nLocal preview\nDocker image\nA Docker image built from this repository is available here:\n👉 ghcr.io/HelenaLC/spatialdata.book 🐳\n\n\n\n\n\n\nGet started now 🎉\n\n\n\nYou can get access to all the packages used in this book in &lt; 1 minute, using this command in a terminal:\n\n\n\nbash\n\ndocker run -it ghcr.io/HelenaLC/spatialdata.book:devel R\n\n\n\n\nRStudio Server\nAn RStudio Server instance can be initiated from the Docker image as follows:\n\n\n\nbash\n\ndocker run \\\n    --volume &lt;local_folder&gt;:&lt;destination_folder&gt; \\\n    -e PASSWORD=OHCA \\\n    -p 8787:8787 \\\n    ghcr.io/HelenaLC/spatialdata.book:devel\n\n\nThe initiated RStudio Server instance will be available at https://localhost:8787.\n\n\n\n\n\n\n\nSession info\n\n\n\n\n\n\nsessionInfo()\n##  R version 4.4.1 Patched (2024-07-08 r86893)\n##  Platform: aarch64-apple-darwin20\n##  Running under: macOS Sonoma 14.2.1\n##  \n##  Matrix products: default\n##  BLAS:   /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRblas.0.dylib \n##  LAPACK: /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0\n##  \n##  locale:\n##  [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n##  \n##  time zone: Europe/Berlin\n##  tzcode source: internal\n##  \n##  attached base packages:\n##  [1] stats     graphics  grDevices utils     datasets  methods   base     \n##  \n##  loaded via a namespace (and not attached):\n##   [1] htmlwidgets_1.6.4 compiler_4.4.1    fastmap_1.2.0     cli_3.6.3        \n##   [5] tools_4.4.1       htmltools_0.5.8.1 rstudioapi_0.17.1 yaml_2.3.10      \n##   [9] rmarkdown_2.29    knitr_1.49        jsonlite_1.8.9    xfun_0.49        \n##  [13] digest_0.6.37     rlang_1.1.4       evaluate_1.0.1\n\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Docker image"
+    ]
   }
 ]
