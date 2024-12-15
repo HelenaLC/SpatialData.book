@@ -4,12 +4,12 @@ name: rworkflows
 'on':
   push:
     branches:
-    #- devel
-    - RELEASE_**
+    - main
+    #- RELEASE_**
   pull_request:
     branches:
-    #- devel
-    - RELEASE_**
+    - main
+    #- RELEASE_**
 
 jobs:
   rworkflows:
