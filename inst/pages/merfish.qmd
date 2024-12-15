@@ -22,7 +22,7 @@ zs <- unzip_spd_demo(
 
 ```{r plot, fig.width=6, fig.height=5}
 p <- point(sd, "single_molecule")
-p <- p[sample(length(p), 2e3)]
+p <- p[sample(length(p), 1e3)]
 point(sd, "molecules") <- p
 plotSpatialData() +
     plotImage(sd) +
