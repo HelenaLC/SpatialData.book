@@ -21,6 +21,10 @@ BugReports: https://github.com/HelenaLC/SpatialData.book
 Depends:
     R (>= 4.4)
 Imports:
+    SpatialData,
+    SpatialData.data,
+    SpatialData.plot,
+    ggplot2
 Suggests:
     BiocManager, 
     BiocVersion, 
@@ -28,6 +32,10 @@ Suggests:
     glue,
     sessioninfo,
     knitr 
+remotes:
+    HelenaLC/SpatialData,
+    HelenaLC/SpatialData.data,
+    HelenaLC/SpatialData.plot
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 BiocType: Book
