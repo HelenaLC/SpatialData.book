@@ -1,0 +1,41 @@
+# MERFISH
+
+```{r load-libs, message=FALSE}
+library(dplyr)
+library(ggplot2)
+library(patchwork)
+library(ggnewscale)
+library(SpatialData)
+library(SpatialData.data)
+library(SpatialData.plot)
+library(SingleCellExperiment)
+```
+
+```{r load-data}
+dir.create(td <- tempfile())
+zs <- unzip_spd_demo(
+    zipname="merfish", 
+    source="biocOSN",
+    destination=td)
+(sd <- readSpatialData(zs))
+```
+
+```{r plot, fig.width=6, fig.height=5}
+p <- point(sd, "single_molecule")
+p <- p[sample(length(p), 2e3)]
+point(sd, "molecules") <- p
+plotSpatialData() +
+    plotImage(sd) +
+    new_scale_color() +
+    plotShape(sd, "anatomical") +
+    new_scale_color() +
+    plotPoint(sd, "molecules", c="cell_type", s=0.1)
+```
+
+::: {.callout-note icon=false, collapse=true}
+# Session {-}
+```{r}
+#| code-fold: false
+sessionInfo()
+```
+:::

@@ -21,10 +21,14 @@ BugReports: https://github.com/HelenaLC/SpatialData.book
 Depends:
     R (>= 4.4)
 Imports:
+    dplyr,
+    ggplot2,
+    ggnewscale,
+    patchwork,
+    SingleCellExperiment,
     SpatialData,
     SpatialData.data,
-    SpatialData.plot,
-    ggplot2
+    SpatialData.plot
 Suggests:
     BiocManager, 
     BiocVersion, 

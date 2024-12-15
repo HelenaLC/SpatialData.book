@@ -73,7 +73,7 @@ micromamba activate BiocBook
 -->
 
 ::: {.callout-note icon=false, collapse=true}
-# Session info {-}
+# Session {-}
 ```{r}
 #| code-fold: false
 sessionInfo()

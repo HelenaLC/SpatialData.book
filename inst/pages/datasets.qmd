@@ -23,3 +23,11 @@ zs <- unzip_spd_demo(
     destination=td)
 (sd <- readSpatialData(zs))
 ```
+
+::: {.callout-note icon=false, collapse=true}
+# Session {-}
+```{r}
+#| code-fold: false
+sessionInfo()
+```
+:::
