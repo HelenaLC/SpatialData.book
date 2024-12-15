@@ -4,11 +4,11 @@ name: rworkflows
 'on':
   push:
     branches:
-    - devel
+    #- devel
     - RELEASE_**
   pull_request:
     branches:
-    - devel
+    #- devel
     - RELEASE_**
 
 jobs:
@@ -20,11 +20,7 @@ jobs:
       fail-fast: ${{ false }}
       matrix:
         config:
-        - os: ubuntu-latest
-          bioc: devel
-          r: auto
-          cont: ghcr.io/bioconductor/bioconductor:devel
-          rspm: https://packagemanager.rstudio.com/cran/__linux__/focal/release
+        - { os: ubuntu-latest, r: '4.4', bioc: '3.20', cont: "bioconductor/bioconductor_docker:RELEASE_3_20", rspm: "https://packagemanager.rstudio.com/cran/__linux__/jammy/latest" }
         # - os: macOS-latest
         #   bioc: release
         #   r: auto
