@@ -1,10 +1,10 @@
-# introduction
+# Introduction
 
 @Marconato2024
 
 ![](images/SpatialData.png){width=50%}
 
 - `SpatialData`: S4 class, readers (and, not yet, writers)
-- `SpatialData.plot`: element-wise and layered visualizations
+- `SpatialData.plot`: element-wise and layered visualization
 - `SpatialData.data`: example datasets made available  
 through Bioc's OSN bucket (and `r BiocStyle::Biocpkg("BiocFileCache")` support)
